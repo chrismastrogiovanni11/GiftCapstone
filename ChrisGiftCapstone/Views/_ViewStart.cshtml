@@ -1,0 +1,14 @@
+﻿@{
+    if (this.User.IsInRole("Admin"))
+    {
+        Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    }
+    else if (this.User.IsInRole("GiftGetter"))
+    {
+        Layout = "~/Views/Shared/_LayoutGiftGetter.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}

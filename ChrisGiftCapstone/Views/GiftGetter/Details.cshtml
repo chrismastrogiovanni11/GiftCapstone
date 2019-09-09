@@ -1,0 +1,19 @@
+﻿@model ChrisGiftCapstone.Models.GiftGetter
+@{
+    ViewBag.Title = Model.Id;
+}
+<br />
+<div>
+    <h2>@Model.FirstName @Model.LastName</h2>
+    @Html.ActionLink("Edit Info", "Edit", "GiftGetter", new { id = Model.Id }, null)
+</div>
+<ul>
+    <li>First Name: @Model.FirstName</li>
+    <li>Last Name: @Model.LastName</li>
+    <li>Email: @Model.Email</li>
+    <li>Giftee First Name: @Model.Giftee.FirstName</li>
+    <li>Giftee Last Name: @Model.Giftee.LastName</li>
+    <li>Gift Event Name: @Model.GiftEvent.EventName</li>
+    <li>Gift Event Date: @Model.GiftEvent.EventDate</li>
+
+</ul>

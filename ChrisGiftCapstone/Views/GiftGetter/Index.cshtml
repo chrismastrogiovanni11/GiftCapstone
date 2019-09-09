@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ChrisGiftCapstone.Models.GiftGetter>
+@{
+    ViewBag.Title = "GiftGetter";
+}
+
+<h2>Giftees</h2>
+@Html.ActionLink("Add Giftee", "Create", "Giftees")
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Giftees</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var giftee in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(giftee.Email, "Details", "Giftees", new { id = giftee.Id }, null)</td>
+                <td>@Html.ActionLink("Delete", "Delete", "Giftees", new { id = giftee.Id }, null)</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>GiftEvent</h3>
+
+@Html.ActionLink("Add Gift Event", "Create", "GiftEvent")
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Giftees</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var giftevent in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(giftevent.Email, "Details", "GiftEvent", new { id = giftevent.Id }, null)</td>
+                <td>@Html.ActionLink("Delete", "Delete", "GiftEvent", new { id = giftevent.Id }, null)</td>
+            </tr>
+        }
+    </tbody>
+</table>
